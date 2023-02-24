@@ -1,0 +1,20 @@
+.jugadores-headers .mat-expansion-panel-header-title,
+.jugadores-headers .mat-expansion-panel-header-description {
+  flex-basis: 0;
+  top: 0%;
+
+}
+
+.jugadores-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+}
+
+
+.player-list {
+  overflow: scroll;
+}
+
+mat-grid-list {
+  margin-right: 20px;
+}
+

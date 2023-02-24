@@ -1,1 +1,49 @@
-<p>equipos works!</p>
+<h2 class="team-name">Team: {{ name }}</h2>
+
+<mat-divider></mat-divider>
+
+<h2>Players</h2>
+
+<mat-grid-list cols="5" rowHeight="400">
+  <mat-grid-tile rowspan="2">
+    <mat-accordion class="players-headers">
+      <mat-expansion-panel
+        hideToggle="true"
+        *ngFor="let p of players; let i = index"
+        [expanded]="step === i"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ p.name }}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{ p.position }}
+            <mat-icon>account_circle</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>Edad: {{ p.age }}</p>
+        <p>Apodo: {{ p.nickname }}</p>
+
+        <p *ngIf="p.status">Estado: Active</p>
+        <p *ngIf="!p.status">Estado: No Active</p>
+
+        <button
+          *ngIf="!p.status"
+          mat-raised-button
+          color="primary"
+          (click)="activatePlayer(p)"
+        >
+          Activar
+        </button>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-grid-tile>
+  <mat-grid-tile *ngFor="let p of players; let i = index">
+    <app-jugadores
+      [player]="p"
+      [team]="name"
+      (onActivate)="updateStatus(p, i, $event)"
+      (click)="showData(i)"
+    ></app-jugadores>
+  </mat-grid-tile>
+</mat-grid-list>

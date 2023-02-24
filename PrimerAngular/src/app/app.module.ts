@@ -8,10 +8,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Angular Material Modules
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+
+// Components
 import { JuegoComponent } from './components/juego/juego.component';
 import { EquiposComponent } from './components/equipos/equipos.component';
 import { JugadoresComponent } from './components/jugadores/jugadores.component';
 import { LoginComponent } from './components/login/login.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -26,7 +36,12 @@ import { LoginComponent } from './components/login/login.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatExpansionModule,
+    MatDividerModule,
+    MatIconModule,
+    MatCardModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

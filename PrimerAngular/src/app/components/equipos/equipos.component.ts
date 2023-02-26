@@ -9,7 +9,7 @@ import TEAMS from '../../../assets/data/teams.json';
   templateUrl: './equipos.component.html',
   styleUrls: ['./equipos.component.scss'],
 })
-export class EquiposComponent implements OnInit{
+export class EquiposComponent implements OnInit {
   name: string = 'Bokita';
   status: boolean = false;
   // player:string = "Sergio";
@@ -28,9 +28,17 @@ export class EquiposComponent implements OnInit{
 
   step = 0;
 
+  budget = 20000000;
+  members = 50000;
+  effectivity = 0.8464;
+  search= '';
+
+  update = new Date();
+
   constructor() {}
 
   ngOnInit() {
+
     this.name = 'Felinos';
 
     this.players = PLAYERS as any;
@@ -55,5 +63,15 @@ export class EquiposComponent implements OnInit{
 
   showData(i: number) {
     this.step = i;
+  }
+
+  getColor(status: boolean) {
+    let color = 'green';
+    if (status) {
+      color = 'blue';
+    } else {
+      color = 'red';
+    }
+    return color;
   }
 }
